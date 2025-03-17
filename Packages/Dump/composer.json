@@ -1,0 +1,13 @@
+{
+    "name": "encore/dump",
+    "description": "A Laravel-like dd() and dump() function for PHP",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "encore\\Packages\\Dump\\": ""
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+} 

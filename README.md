@@ -1,7 +1,7 @@
 # Encore Framework
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/sajjadbandezadeh/encore-framework/main/logo.png" alt="Encore Framework Logo" width="200">
+  <img src="https://raw.githubusercontent.com/sajjadbandezadeh/encore-framework/refs/heads/master/logo.svg" alt="Encore Framework Logo" width="200">
   
   [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-purple.svg)](https://php.net)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)

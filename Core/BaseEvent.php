@@ -1,6 +1,6 @@
 <?php
 
-namespace encore\Core;
+namespace ebcore\Core;
 
 abstract class BaseEvent
 {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($error['type']) ?> | Encore Framework</title>
+    <title><?= htmlspecialchars($error['type']) ?> | Ebcore Framework</title>
     <link rel="stylesheet" href="/_error/assets/css/error.css">
 </head>
 <body>
@@ -84,8 +84,8 @@
         </section>
 
         <footer class="error-footer">
-            <p>Encore Framework v<?= encore\Core\Config::get('app.version', '1.0.0') ?></p>
-            <p>Environment: <?= encore\Core\Config::get('app.debug') ? 'Development' : 'Production' ?></p>
+            <p>Ebcore Framework v<?= ebcore\Core\Config::get('app.version', '1.0.0') ?></p>
+            <p>Environment: <?= ebcore\Core\Config::get('app.debug') ? 'Development' : 'Production' ?></p>
         </footer>
     </div>
 </body>

@@ -1,11 +1,11 @@
 <?php
 
-namespace encore\Core;
+namespace ebcore\Core;
 
-use encore\Core\Engine;
-use encore\Module\Response;
-use encore\Module\StatusManager;
-use encore\Middlewares\DuplicateRequestMiddleware;
+use ebcore\Core\Engine;
+use ebcore\Module\Response;
+use ebcore\Module\StatusManager;
+use ebcore\Middlewares\DuplicateRequestMiddleware;
 
 class Router
 {

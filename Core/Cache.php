@@ -1,11 +1,11 @@
 <?php
 
-namespace encore\Core;
+namespace ebcore\Core;
 
 class Cache
 {
     private static $storage = [];
-    private static $prefix = 'encore_cache:';
+    private static $prefix = 'ebcore_cache:';
     private static $defaultTtl = 3600; // 1 hour
     private static $cacheDir;
 

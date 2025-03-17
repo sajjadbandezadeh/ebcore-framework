@@ -1,6 +1,6 @@
 <?php
 
-namespace encore\Middlewares;
+namespace ebcore\Middlewares;
 
 class DuplicateRequestMiddleware extends BaseMiddleware
 {

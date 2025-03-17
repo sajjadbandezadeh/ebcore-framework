@@ -1,19 +1,19 @@
-# Encore Framework
+# Ebcore Framework
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/sajjadbandezadeh/encore-framework/refs/heads/master/logo.svg" alt="Encore Framework Logo" width="200">
+  <img src="https://raw.githubusercontent.com/sajjadbandezadeh/ebcore-framework/refs/heads/master/logo.svg" alt="Ebcore Framework Logo" width="200">
   
   [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-purple.svg)](https://php.net)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[//]: # (  [![Build Status]&#40;https://github.com/encore/encore/workflows/tests/badge.svg&#41;]&#40;https://github.com/encore/encore/actions&#41;)
+[//]: # (  [![Build Status]&#40;https://github.com/ebcore/ebcore/workflows/tests/badge.svg&#41;]&#40;https://github.com/ebcore/ebcore/actions&#41;)
 
-[//]: # (  [![Code Coverage]&#40;https://codecov.io/gh/encore/encore/branch/main/graph/badge.svg&#41;]&#40;https://codecov.io/gh/encore/encore&#41;)
+[//]: # (  [![Code Coverage]&#40;https://codecov.io/gh/ebcore/ebcore/branch/main/graph/badge.svg&#41;]&#40;https://codecov.io/gh/ebcore/ebcore&#41;)
 
-[//]: # (  [![StyleCI]&#40;https://github.styleci.io/repos/encore/encore/badge.svg&#41;]&#40;https://github.styleci.io/repos/encore/encore&#41;)
+[//]: # (  [![StyleCI]&#40;https://github.styleci.io/repos/ebcore/ebcore/badge.svg&#41;]&#40;https://github.styleci.io/repos/ebcore/ebcore&#41;)
 </div>
 
-Encore is a modern and powerful PHP framework inspired by Entity-Based architecture. It helps you build complex web applications with ease and elegance.
+Ebcore is a modern and powerful PHP framework inspired by Entity-Based architecture. It helps you build complex web applications with ease and elegance.
 
 ## Key Features
 
@@ -28,10 +28,10 @@ Encore is a modern and powerful PHP framework inspired by Entity-Based architect
 
 ## Installation
 
-Create a new project with Encore:
+Create a new project with Ebcore:
 
 ```bash
-composer create-project sajjadbandezadeh/encore-skeleton my-project
+composer create-project sajjadbandezadeh/ebcore-skeleton my-project
 cd my-project
 ```
 
@@ -58,7 +58,7 @@ my-project/
 ├── routes/
 │   └── web.php
 └── vendor/
-    └── encore/
+    └── ebcore/
         ├── Core/
         ├── Middlewares/
         └── Packages/
@@ -70,7 +70,7 @@ my-project/
 
 ```php
 // routes/web.php
-use encore\Core\Router;
+use ebcore\Core\Router;
 
 $router->map('GET', '/', 'User','UserController', 'index');
 $router->map('GET', '/users', 'User','UserController', 'index', 'UserRegisterEvent', 'after');
@@ -85,10 +85,10 @@ $router->run();
 // app/entities/User/Controllers/UserController.php
 namespace App\entities\User\Controllers;
 
-use encore\Core\Controller;
-use encore\DB\DbContext;
-use encore\Module\Response;
-use encore\Packages\Dump\Dump;
+use ebcore\Core\Controller;
+use ebcore\DB\DbContext;
+use ebcore\Module\Response;
+use ebcore\Packages\Dump\Dump;
 
 class UserController 
 {
@@ -110,7 +110,7 @@ class UserController
 // app/entities/User/Middlewares/CheckUserPermissionMiddleware.php
 namespace app\entities\User\Middlewares;
 
-use encore\Core\Middleware;
+use ebcore\Core\Middleware;
 
 class CheckUserPermissionMiddleware extends BaseMiddleware
 {
@@ -139,9 +139,9 @@ class CheckUserPermissionMiddleware extends BaseMiddleware
 // app/entities/User/Events/UserRegisterEvent.php
 namespace App\entities\User\Events;
 
-use encore\Core\Events;
-use encore\DB\DbContext;
-use encore\Module\Response;
+use ebcore\Core\Events;
+use ebcore\DB\DbContext;
+use ebcore\Module\Response;
 
 class UserRegisterEvent extends Events
 {
@@ -169,7 +169,7 @@ class UserRegisterEvent extends Events
 ### 5. Using Cache System
 
 ```php
-use encore\Core\Cache;
+use ebcore\Core\Cache;
 
 // Store in cache
 Cache::put('key', 'value', 3600);
@@ -188,7 +188,7 @@ Cache::forget('key');
 ```json
 // config/app.json
 {
-    "name": "Encore Framework",
+    "name": "Ebcore Framework",
     "version": "1.0.0",
     "debug": true,
     "timezone": "Asia/Tehran",
@@ -232,9 +232,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- [Documentation](https://encore.ir/docs)
-- [GitHub](https://github.com/sajjadbandezadeh/encore-framework)
-- [Twitter](https://twitter.com/encorefw)
+- [Documentation](https://ebcore.ir/docs)
+- [GitHub](https://github.com/sajjadbandezadeh/ebcore-framework)
+- [Twitter](https://twitter.com/ebcorefw)
 
 ## Acknowledgments
 

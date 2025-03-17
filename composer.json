@@ -1,8 +1,8 @@
 {
-    "name": "encore/framework",
+    "name": "ebcore/framework",
     "description": "A Modern Entity Based PHP Framework",
     "type": "library",
-    "keywords": ["framework", "encore"],
+    "keywords": ["framework", "ebcore"],
     "license": "MIT",
     "authors": [
         {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "encore\\": "/"
+            "ebcore\\": "/"
         }
     },
     "config": {

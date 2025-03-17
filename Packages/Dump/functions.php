@@ -1,6 +1,6 @@
 <?php
 
-use encore\Packages\Dump\Dump;
+use ebcore\Packages\Dump\Dump;
 
 if (!function_exists('dd')) {
     /**

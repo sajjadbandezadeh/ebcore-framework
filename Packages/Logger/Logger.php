@@ -1,6 +1,6 @@
 <?php
 
-namespace encore\Packages\Logger;
+namespace ebcore\Packages\Logger;
 
 class Logger
 {

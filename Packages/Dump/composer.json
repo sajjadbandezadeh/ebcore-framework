@@ -1,10 +1,10 @@
 {
-    "name": "encore/dump",
+    "name": "ebcore/dump",
     "description": "A Laravel-like dd() and dump() function for PHP",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "encore\\Packages\\Dump\\": ""
+            "ebcore\\Packages\\Dump\\": ""
         }
     },
     "require": {

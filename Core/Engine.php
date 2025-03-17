@@ -1,9 +1,9 @@
 <?php
 
-namespace encore\Core;
+namespace ebcore\Core;
 
-use encore\Module\DataCleaner;
-use encore\Packages\Logger\Logger;
+use ebcore\Module\DataCleaner;
+use ebcore\Packages\Logger\Logger;
 
 class Engine
 {
@@ -15,7 +15,7 @@ class Engine
         // Load global middlewares from config
         $configMiddlewares = Config::get('middleware.global_middlewares', []);
         foreach ($configMiddlewares as $middleware) {
-            $class = "\\encore\\Middlewares\\$middleware";
+            $class = "\\ebcore\\Middlewares\\$middleware";
             if (class_exists($class)) {
                 self::$globalMiddlewares[] = $class;
             }

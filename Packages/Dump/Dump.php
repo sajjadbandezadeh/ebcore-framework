@@ -1,6 +1,6 @@
 <?php
 
-namespace encore\Packages\Dump;
+namespace ebcore\Packages\Dump;
 
 class Dump
 {

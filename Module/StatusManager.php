@@ -1,6 +1,6 @@
 <?php
 
-namespace encore\Module;
+namespace ebcore\Module;
 
 class StatusManager
 {

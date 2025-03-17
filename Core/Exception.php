@@ -1,9 +1,9 @@
 <?php
 
-namespace encore\Core;
+namespace ebcore\Core;
 
-use encore\Module\Response;
-use encore\Core\Config;
+use ebcore\Module\Response;
+use ebcore\Core\Config;
 
 class Exception
 {
@@ -12,7 +12,7 @@ class Exception
 
     public function __construct()
     {
-        $this->errorViewPath = dirname(dirname(__DIR__)) . '/encore/Packages/ErrorHandler/views/error.php';
+        $this->errorViewPath = dirname(dirname(__DIR__)) . '/ebcore/Packages/ErrorHandler/views/error.php';
         
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
@@ -23,8 +23,8 @@ class Exception
 
     public function render()
     {
-        set_exception_handler([$this, 'EncoreExceptionHandler']);
-        set_error_handler([$this, 'EncoreErrorHandler']);
+        set_exception_handler([$this, 'EbcoreExceptionHandler']);
+        set_error_handler([$this, 'EbcoreErrorHandler']);
     }
 
     public function handle404()
@@ -66,7 +66,7 @@ class Exception
         exit;
     }
 
-    public function EncoreExceptionHandler($exception)
+    public function EbcoreExceptionHandler($exception)
     {
         $error = [
             'type' => get_class($exception),
@@ -88,7 +88,7 @@ class Exception
         exit;
     }
 
-    public function EncoreErrorHandler($errno, $errstr, $errfile, $errline)
+    public function EbcoreErrorHandler($errno, $errstr, $errfile, $errline)
     {
         $error = [
             'type' => $this->getErrorType($errno),

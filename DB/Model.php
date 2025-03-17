@@ -1,6 +1,6 @@
 <?php
 
-namespace encore\DB;
+namespace ebcore\DB;
 
 abstract class Model
 {

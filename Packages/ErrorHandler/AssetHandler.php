@@ -1,6 +1,6 @@
 <?php
 
-namespace encore\Packages\ErrorHandler;
+namespace ebcore\Packages\ErrorHandler;
 
 class AssetHandler {
     private static $allowedExtensions = ['css', 'js'];

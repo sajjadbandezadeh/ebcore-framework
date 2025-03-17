@@ -1,6 +1,6 @@
-# Contributing to Encore Framework
+# Contributing to Ebcore Framework
 
-First off, thank you for considering contributing to Encore Framework! It's people like you that make Encore such a great tool.
+First off, thank you for considering contributing to Ebcore Framework! It's people like you that make Ebcore such a great tool.
 
 ## Code of Conduct
 

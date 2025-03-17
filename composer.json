@@ -1,5 +1,5 @@
 {
-    "name": "encore-framework",
+    "name": "encore/framework",
     "description": "A Modern Entity Based PHP Framework",
     "type": "library",
     "keywords": ["framework", "encore"],

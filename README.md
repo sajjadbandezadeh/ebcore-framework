@@ -1,13 +1,16 @@
 # Encore Framework
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/encore/encore/main/logo.png" alt="Encore Framework Logo" width="200">
+  <img src="https://raw.githubusercontent.com/sajjadbandezadeh/encore-framework/main/logo.png" alt="Encore Framework Logo" width="200">
   
   [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-purple.svg)](https://php.net)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-  [![Build Status](https://github.com/encore/encore/workflows/tests/badge.svg)](https://github.com/encore/encore/actions)
-  [![Code Coverage](https://codecov.io/gh/encore/encore/branch/main/graph/badge.svg)](https://codecov.io/gh/encore/encore)
-  [![StyleCI](https://github.styleci.io/repos/encore/encore/badge.svg)](https://github.styleci.io/repos/encore/encore)
+
+[//]: # (  [![Build Status]&#40;https://github.com/encore/encore/workflows/tests/badge.svg&#41;]&#40;https://github.com/encore/encore/actions&#41;)
+
+[//]: # (  [![Code Coverage]&#40;https://codecov.io/gh/encore/encore/branch/main/graph/badge.svg&#41;]&#40;https://codecov.io/gh/encore/encore&#41;)
+
+[//]: # (  [![StyleCI]&#40;https://github.styleci.io/repos/encore/encore/badge.svg&#41;]&#40;https://github.styleci.io/repos/encore/encore&#41;)
 </div>
 
 Encore is a modern and powerful PHP framework inspired by Entity-Based architecture. It helps you build complex web applications with ease and elegance.

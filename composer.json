@@ -10,6 +10,9 @@
             "email": "sajjadbnz1@gmail.com"
         }
     ],
+    "replace": {
+        "ebcore/framework": "self.version"
+    },
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*"

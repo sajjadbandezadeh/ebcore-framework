@@ -1,5 +1,5 @@
 {
-    "name": "ebcore/ebcore",
+    "name": "ebcore/framework",
     "description": "A Modern Entity Based PHP Framework",
     "type": "library",
     "keywords": ["framework", "ebcore", "iranian php framework"],

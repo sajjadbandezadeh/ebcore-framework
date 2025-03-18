@@ -1,8 +1,8 @@
 {
-    "name": "ebcore/framework",
+    "name": "ebcore/ebcore",
     "description": "A Modern Entity Based PHP Framework",
     "type": "library",
-    "keywords": ["framework", "ebcore", "iranian php framework", "iranian framework"],
+    "keywords": ["framework", "ebcore", "iranian php framework"],
     "license": "MIT",
     "authors": [
         {

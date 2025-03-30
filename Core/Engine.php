@@ -31,16 +31,15 @@ class Engine
         }
 
         // Execute route-specific middlewares
-        if (isset($handler['middleware']) && is_array($handler['middleware'])) {
+        if (isset($handler['middleware'])) {
+            $middlewareName = $handler['middleware'];
             $modelClass = $handler["model"];
-            foreach ($handler['middleware'] as $middlewareName) {
-                $class = "\App\\entities\\$modelClass\\Events\\{$middlewareName}";
-                if (class_exists($class)) {
-                    $middleware = new $class();
-                    $middleware->handle();
-                }
-
+            $class = "\App\\entities\\$modelClass\\Middlewares\\{$middlewareName}";
+            if (!class_exists($class)) {
+                throw new \Exception("Event `$handler[event]` not found.");
             }
+            $middleware = new $class();
+            $middleware->handle();
         }
 
         return $this->callAction($handler, $params);

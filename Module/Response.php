@@ -14,6 +14,7 @@ class Response
         ];
         header('Content-Type: application/json');
         echo json_encode($response);
+        exit();
     }
     
     public static function SystemResponse($code,$message)

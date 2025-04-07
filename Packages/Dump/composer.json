@@ -1,6 +1,6 @@
 {
     "name": "ebcore/dump",
-    "description": "A Laravel-like dd() and dump() function for PHP",
+    "description": "A Laravel-like dd() and dump() function for PHP by Sajjad Bandezadeh",
     "type": "library",
     "autoload": {
         "psr-4": {

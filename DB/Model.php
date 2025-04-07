@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\DB;
+namespace ebcore\framework\DB;
 
 abstract class Model
 {
@@ -14,7 +14,7 @@ abstract class Model
 
     protected static function loadDatabaseConfig()
     {
-        $configPath = __DIR__ . '/../../../config/database.json';
+        $configPath = __DIR__ . '/../../../../config/database.json';
         if (!file_exists($configPath)) {
             throw new \Exception("Database config file not found.");
         }

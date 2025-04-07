@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Packages\Logger;
+namespace ebcore\framework\Packages\Logger;
 
 class Logger
 {
@@ -19,9 +19,9 @@ class Logger
     private static function init()
     {
         if (self::$logPath === null) {
-            $rootPath = dirname(dirname(dirname(dirname(__DIR__))));
+            $rootPath = dirname(dirname(dirname(dirname(dirname(__DIR__)))));
             self::$logPath = $rootPath . '/storage/logs';
-            
+
             if (!is_dir(self::$logPath)) {
                 mkdir(self::$logPath, 0777, true);
             }
@@ -38,11 +38,11 @@ class Logger
     {
         $logFile = self::getLogFile();
         $timestamp = date('Y-m-d H:i:s');
-        
+
         $contextStr = !empty($context) ? ' ' . json_encode($context) : '';
-        
+
         $logMessage = "[{$timestamp}] {$level}: {$message}{$contextStr}" . PHP_EOL;
-        
+
         file_put_contents($logFile, $logMessage, FILE_APPEND);
     }
 

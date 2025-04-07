@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Module;
+namespace ebcore\framework\Module;
 
 class StatusManager
 {

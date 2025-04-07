@@ -1,9 +1,9 @@
 <?php
 
-namespace ebcore\Core;
+namespace ebcore\framework\Core;
 
-use ebcore\Module\DataCleaner;
-use ebcore\Packages\Logger\Logger;
+use ebcore\framework\Module\DataCleaner;
+use ebcore\framework\Packages\Logger\Logger;
 
 class Engine
 {
@@ -31,15 +31,15 @@ class Engine
         }
 
         // Execute route-specific middlewares
-        if (isset($handler['middleware'])) {
-            $middlewareName = $handler['middleware'];
+        if (isset($handler['middleware']) && is_array($handler['middleware'])) {
             $modelClass = $handler["model"];
-            $class = "\App\\entities\\$modelClass\\Middlewares\\{$middlewareName}";
-            if (!class_exists($class)) {
-                throw new \Exception("Event `$handler[event]` not found.");
+            foreach ($handler['middleware'] as $middlewareName) {
+                $class = "\App\\entities\\$modelClass\\Middlewares\\{$middlewareName}";
+                if (class_exists($class)) {
+                    $middleware = new $class();
+                    $middleware->handle();
+                }
             }
-            $middleware = new $class();
-            $middleware->handle();
         }
 
         return $this->callAction($handler, $params);
@@ -50,7 +50,7 @@ class Engine
         $modelClass = $handler["model"];
         $controllerClass = "\App\\entities\\$modelClass\\Controllers\\{$handler['controller']}";
         $actionClass = $handler["action"];
-        
+
         if (!class_exists($controllerClass)) {
             throw new \Exception("Controller `$handler[controller]` not found.");
         }
@@ -65,7 +65,7 @@ class Engine
                 throw new \Exception("Event `$handler[event]` not found.");
             }
         }
-        
+
         if (isset($handler["eventTime"])) {
             $eventTime = $handler["eventTime"];
             if (!in_array($eventTime, ['before', 'after'])) {
@@ -84,7 +84,7 @@ class Engine
         }
 
         $controllerInstance = new $controllerClass();
-        
+
         if (isset($handler['event']) && isset($eventTime) && $eventTime === 'before') {
             $this->executeEvent($eventClass);
         }
@@ -96,12 +96,13 @@ class Engine
         }
 
         return $result;
+        exit();
     }
 
     private function executeEvent($eventClass)
     {
         $eventKey = $eventClass . '_' . microtime(true);
-        
+
         if (isset(self::$executedEvents[$eventKey])) {
             return;
         }
@@ -109,44 +110,5 @@ class Engine
         $eventInstance = new $eventClass();
         $eventInstance->execute();
         self::$executedEvents[$eventKey] = true;
-    }
-
-    private function processMiddlewares($middlewares, $request)
-    {
-        $stack = function ($request) {
-            return $this->callAction($request);
-        };
-
-        // First process entity middlewares (if any)
-        foreach (array_reverse($middlewares) as $middleware) {
-            $stack = function ($request) use ($stack, $middleware) {
-                $middlewareInstance = new $middleware();
-                return $middlewareInstance->handle($request, $stack);
-            };
-        }
-
-        // Then process global middlewares
-        foreach (array_reverse(self::$globalMiddlewares) as $middleware) {
-            $stack = function ($request) use ($stack, $middleware) {
-                $middlewareInstance = new $middleware();
-                return $middlewareInstance->handle($request, $stack);
-            };
-        }
-
-        return $stack($request);
-    }
-
-    public function run($request)
-    {
-        try {
-            // Process all middlewares and then call the action
-            return $this->processMiddlewares($request->getMiddlewares(), $request);
-        } catch (\Exception $e) {
-            Logger::error("Error in Engine::run", [
-                'error' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
-            ]);
-            throw $e;
-        }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\DB;
+namespace ebcore\framework\DB;
 
 class DbContext
 {
@@ -9,7 +9,7 @@ class DbContext
     public static function __callStatic($name, $arguments)
     {
         $modelClass = "\App\\entities\\" . ucfirst($name) . "\\" . ucfirst($name);
-        
+
         if (!class_exists($modelClass)) {
             throw new \Exception("Model class $modelClass not found.");
         }

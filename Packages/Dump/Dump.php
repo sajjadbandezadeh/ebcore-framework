@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Packages\Dump;
+namespace ebcore\framework\Packages\Dump;
 
 class Dump
 {
@@ -62,11 +62,11 @@ class Dump
     {
         $style = self::generateStyle();
         echo "<pre style='{$style}'>";
-        
+
         foreach ($vars as $var) {
             self::formatVar($var);
         }
-        
+
         echo "</pre>";
     }
 
@@ -83,69 +83,69 @@ class Dump
     {
         $type = gettype($var);
         $color = self::$typeColors[$type] ?? self::$typeColors['unknown'];
-        
+
         echo "<span style='color: {$color}'>";
-        
+
         switch ($type) {
             case 'string':
                 echo "string(" . strlen($var) . ") \"{$var}\"";
                 break;
-                
+
             case 'integer':
             case 'float':
                 echo "{$type}({$var})";
                 break;
-                
+
             case 'boolean':
                 echo "bool(" . ($var ? 'true' : 'false') . ")";
                 break;
-                
+
             case 'null':
                 echo "null";
                 break;
-                
+
             case 'array':
                 self::formatArray($var, $depth);
                 break;
-                
+
             case 'object':
                 self::formatObject($var, $depth);
                 break;
-                
+
             case 'resource':
                 echo "resource(" . get_resource_type($var) . ")";
                 break;
-                
+
             case 'callable':
                 echo "callable";
                 break;
-                
+
             default:
                 echo "unknown type";
         }
-        
+
         echo "</span>";
     }
 
     private static function formatArray($array, $depth)
     {
         echo "array(" . count($array) . ") {\n";
-        
+
         foreach ($array as $key => $value) {
             echo str_repeat("    ", $depth + 1);
             echo "[";
-            
+
             if (is_string($key)) {
                 echo "\"{$key}\"";
             } else {
                 echo $key;
             }
-            
+
             echo "] => ";
             self::formatVar($value, $depth + 1);
             echo "\n";
         }
-        
+
         echo str_repeat("    ", $depth) . "}";
     }
 
@@ -153,7 +153,7 @@ class Dump
     {
         $class = get_class($object);
         echo "object({$class}) {\n";
-        
+
         $reflection = new \ReflectionObject($object);
         foreach ($reflection->getProperties() as $property) {
             $property->setAccessible(true);
@@ -163,7 +163,7 @@ class Dump
             self::formatVar($property->getValue($object), $depth + 1);
             echo "\n";
         }
-        
+
         echo str_repeat("    ", $depth) . "}";
     }
 } 

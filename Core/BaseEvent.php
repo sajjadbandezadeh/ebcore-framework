@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Core;
+namespace ebcore\framework\Core;
 
 abstract class BaseEvent
 {
@@ -21,5 +21,5 @@ abstract class BaseEvent
         unset(self::$executedEvents[$eventName]);
     }
 
-    abstract public function execute();
+    abstract public function execute(): void;
 } 

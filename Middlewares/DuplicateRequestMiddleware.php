@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Middlewares;
+namespace ebcore\framework\Middlewares;
 
 class DuplicateRequestMiddleware extends BaseMiddleware
 {
@@ -54,8 +54,8 @@ class DuplicateRequestMiddleware extends BaseMiddleware
 
     private function isDuplicateRequest($signature)
     {
-        return isset(self::$processedRequests[$signature]) || 
-               isset($_SESSION[self::$sessionKey][$signature]);
+        return isset(self::$processedRequests[$signature]) ||
+            isset($_SESSION[self::$sessionKey][$signature]);
     }
 
     private function markRequestAsProcessed($signature)

@@ -1,10 +1,10 @@
 <?php
 
-namespace ebcore\Middlewares;
+namespace ebcore\framework\Middlewares;
 
-use ebcore\Core\Config;
-use ebcore\Core\Cache;
-use ebcore\Packages\Logger\Logger;
+use ebcore\framework\Core\Config;
+use ebcore\framework\Core\Cache;
+use ebcore\framework\Packages\Logger\Logger;
 
 class ThrottleMiddleware extends BaseMiddleware
 {
@@ -14,7 +14,7 @@ class ThrottleMiddleware extends BaseMiddleware
     public function __construct()
     {
         Cache::initialize();
-        
+
         // Set default values if config is not set
         $this->maxRequests = (int)Config::get('middleware.throttle.max_requests', 60);
         $this->decayMinutes = (int)Config::get('middleware.throttle.decay_minutes', 1);
@@ -22,7 +22,7 @@ class ThrottleMiddleware extends BaseMiddleware
         if ($this->maxRequests <= 0) {
             $this->maxRequests = 60;
         }
-        
+
         if ($this->decayMinutes <= 0) {
             $this->decayMinutes = 1;
         }
@@ -34,7 +34,7 @@ class ThrottleMiddleware extends BaseMiddleware
 
         // Cleanup old cache entries
         Cache::cleanup();
-        
+
         if ($this->tooManyAttempts($key)) {
             Logger::warning("Rate limit exceeded", [
                 'ip' => $this->getClientIp(),
@@ -44,7 +44,7 @@ class ThrottleMiddleware extends BaseMiddleware
 
             header('HTTP/1.1 429 Too Many Requests');
             header('Retry-After: ' . ($this->decayMinutes * 60));
-            
+
             echo json_encode([
                 'error' => 'Too Many Attempts.',
                 'message' => 'Please try again later.',
@@ -74,19 +74,19 @@ class ThrottleMiddleware extends BaseMiddleware
     private function incrementAttempts($key)
     {
         $ttl = $this->decayMinutes * 60;
-        
+
         if (!Cache::has($key)) {
             Cache::put($key, 1, $ttl);
             return;
         }
-        
+
         Cache::increment($key, 1);
     }
 
     protected function getClientIp()
     {
-        return $_SERVER['HTTP_X_FORWARDED_FOR'] ?? 
-               $_SERVER['HTTP_CLIENT_IP'] ?? 
-               $_SERVER['REMOTE_ADDR'];
+        return $_SERVER['HTTP_X_FORWARDED_FOR'] ??
+            $_SERVER['HTTP_CLIENT_IP'] ??
+            $_SERVER['REMOTE_ADDR'];
     }
 }

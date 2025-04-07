@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Module;
+namespace ebcore\framework\Module;
 
 class Response
 {
@@ -14,9 +14,8 @@ class Response
         ];
         header('Content-Type: application/json');
         echo json_encode($response);
-        exit();
     }
-    
+
     public static function SystemResponse($code,$message)
     {
         $response = [

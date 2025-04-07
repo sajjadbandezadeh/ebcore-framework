@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Core;
+namespace ebcore\framework\Core;
 
 class Cache
 {
@@ -20,7 +20,7 @@ class Cache
     public static function get($key)
     {
         $key = self::$prefix . $key;
-        
+
         // Check memory first
         if (isset(self::$storage[$key])) {
             $data = self::$storage[$key];
@@ -90,7 +90,7 @@ class Cache
     public static function forget($key)
     {
         $key = self::$prefix . $key;
-        
+
         // Remove from memory
         unset(self::$storage[$key]);
 

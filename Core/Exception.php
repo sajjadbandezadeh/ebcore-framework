@@ -1,9 +1,9 @@
 <?php
 
-namespace ebcore\Core;
+namespace ebcore\framework\Core;
 
-use ebcore\Module\Response;
-use ebcore\Core\Config;
+use ebcore\framework\Module\Response;
+use ebcore\framework\Core\Config;
 
 class Exception
 {
@@ -12,12 +12,12 @@ class Exception
 
     public function __construct()
     {
-        $this->errorViewPath = dirname(dirname(__DIR__)) . '/ebcore/Packages/ErrorHandler/views/error.php';
-        
+        $this->errorViewPath = dirname(dirname(__DIR__)) . '/framework/Packages/ErrorHandler/views/error.php';
+
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
-        
+
         $this->render();
     }
 

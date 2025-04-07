@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Packages\ErrorHandler;
+namespace ebcore\framework\Packages\ErrorHandler;
 
 class AssetHandler {
     private static $allowedExtensions = ['css', 'js'];
@@ -14,7 +14,8 @@ class AssetHandler {
     public static function handleRequest() {
         $requestUri = $_SERVER['REQUEST_URI'] ?? '';
         // Check if request starts with /_error/assets/ using strict comparison
-        if (strpos($requestUri, '/_error/assets/') !== false && strpos($requestUri, '/_error/assets/') === 0) {
+        $requestUri = substr($requestUri, strpos($requestUri, "/_error/"));
+        if (strpos($requestUri, '_error/assets/') !== false && strpos($requestUri, '/_error/assets/') === 0) {
             $filePath = self::getFilePath($requestUri);
             if ($filePath && file_exists($filePath)) {
                 self::serveFile($filePath);
@@ -27,9 +28,9 @@ class AssetHandler {
     }
 
     private static function getFilePath($uri) {
-        $relativePath = str_replace('/_error/assets/', '', $uri);
-        $extension = pathinfo($relativePath, PATHINFO_EXTENSION);
 
+        $relativePath = substr($uri, strpos($uri, "/_error/") + 15);
+        $extension = pathinfo($relativePath, PATHINFO_EXTENSION);
         // Security checks
         if (!in_array($extension, self::$allowedExtensions)) {
             return false;

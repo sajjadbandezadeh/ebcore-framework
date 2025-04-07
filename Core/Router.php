@@ -1,11 +1,11 @@
 <?php
 
-namespace ebcore\Core;
+namespace ebcore\framework\Core;
 
-use ebcore\Core\Engine;
-use ebcore\Module\Response;
-use ebcore\Module\StatusManager;
-use ebcore\Middlewares\DuplicateRequestMiddleware;
+use ebcore\framework\Core\Engine;
+use ebcore\framework\Module\Response;
+use ebcore\framework\Module\StatusManager;
+use ebcore\framework\Middlewares\DuplicateRequestMiddleware;
 
 class Router
 {
@@ -86,7 +86,7 @@ class Router
             $uri = $updated;
         }
         $matchedRoute = $this->matchRoute($method, $uri);
-        
+
         if ($matchedRoute) {
             $engine = new Engine();
             return $engine->dispatch($matchedRoute['handler'], $matchedRoute['params']);

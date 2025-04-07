@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Core;
+namespace ebcore\framework\Core;
 
 class Config
 {
@@ -24,7 +24,7 @@ class Config
     {
         $configPath = dirname(dirname(dirname(__DIR__))) . '/config';
         $files = glob($configPath . '/*.json');
-        
+
         foreach ($files as $file) {
             $key = basename($file, '.json');
             $content = file_get_contents($file);

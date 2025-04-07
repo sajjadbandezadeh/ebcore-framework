@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\DB;
+namespace ebcore\framework\DB;
 
 class QueryBuilder
 {

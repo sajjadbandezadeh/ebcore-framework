@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Core;
+namespace ebcore\framework\Core;
 
 abstract class Events
 {

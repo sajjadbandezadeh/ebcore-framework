@@ -1,6 +1,6 @@
 <?php
 
-namespace ebcore\Middlewares;
+namespace ebcore\framework\Middlewares;
 
 abstract class BaseMiddleware
 {
@@ -11,17 +11,10 @@ abstract class BaseMiddleware
      * @param callable $next
      * @return mixed
      */
-    public function handle($request = null, $next = null)
+    public function handle()
     {
-        if ($request === null) {
-            $request = $this->getRequest();
-        }
-        
-        if ($next === null) {
-            $next = function() { return $this->next(); };
-        }
-
-        return $this->process($request, $next);
+        $next = function() { return $this->next(); };
+        return $next;
     }
 
     /**
@@ -79,6 +72,4 @@ abstract class BaseMiddleware
     {
         return true;
     }
-
-    abstract protected function process($request, $next);
 } 

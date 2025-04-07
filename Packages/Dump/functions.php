@@ -1,6 +1,6 @@
 <?php
 
-use ebcore\Packages\Dump\Dump;
+use ebcore\framework\Packages\Dump\Dump;
 
 if (!function_exists('dd')) {
     /**

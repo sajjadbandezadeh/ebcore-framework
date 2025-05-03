@@ -51,6 +51,19 @@ class Engine
         $controllerClass = "\App\\entities\\$modelClass\\Controllers\\{$handler['controller']}";
         $actionClass = $handler["action"];
 
+        if ($handler['model'] == "System" & $handler['controller'] == "SystemController") {
+            switch ($handler["action"]) {
+                case "welcome":
+                    include(dirname(__FILE__) . '/../Resources/Welcome/index.php');
+                    exit();
+                    break;
+                case "health":
+                    echo "Health";
+                    exit();
+                    break;
+            }
+        }
+
         if (!class_exists($controllerClass)) {
             throw new \Exception("Controller `$handler[controller]` not found.");
         }

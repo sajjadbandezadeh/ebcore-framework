@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ebcore Farmework">
+    <meta name="author" content="Sajjad Bandezadeh">
     <title>Welcome | Ebcore v1.0.0</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://bandezadeh.ir/portfolio/ebcore/assets/css/bootstrap.min.css">
+    <script src="https://bandezadeh.ir/portfolio/ebcore/assets/js/jquery.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon"
           href="https://raw.githubusercontent.com/sajjadbandezadeh/ebcore-framework/refs/heads/master/logo.svg"/>
     <style>
@@ -422,7 +425,7 @@
             background-position: top center;
             background-size: 10px 40px;
             cursor: pointer;
-            background-image: url('http://www.ivang-design.com/svg-load/parallax/arrow-up.png');
+            background-image: url('https://bandezadeh.ir/portfolio/ebcore/assets/img/arrow-up.png');
             transform: translateY(-15px);
             -webkit-transition: all 250ms linear;
             transition: all 250ms linear;
@@ -581,22 +584,22 @@
 <div class="section full-height z-bigger">
     <ul class="case-study-wrapper" style="margin-top: 40px !important;">
         <li class="case-study-name">
-            <a href="#" class="hover-target">Entity-Based</a>
+            <a href="https://bandezadeh.ir/portfolio/ebcore/docs/index.html#entity" class="hover-target">Entity-Based</a>
         </li>
         <li class="case-study-name">
-            <a href="#" class="hover-target">Routes</a>
+            <a href="https://bandezadeh.ir/portfolio/ebcore/docs/index.html#routes" class="hover-target">Routes</a>
         </li>
         <li class="case-study-name">
-            <a href="#" class="hover-target">Middlewares</a>
+            <a href="https://bandezadeh.ir/portfolio/ebcore/docs/index.html#middleware" class="hover-target">Middlewares</a>
         </li>
         <li class="case-study-name">
-            <a href="#" class="hover-target">Events</a>
+            <a href="https://bandezadeh.ir/portfolio/ebcore/docs/index.html#events" class="hover-target">Events</a>
         </li>
     </ul>
     <ul class="case-study-images">
         <li>
             <div class="img-hero-background" style="position: relative; align-items: center">
-                <img src="http://130.185.73.58/~matomo/1.png" alt="">
+                <img src="https://bandezadeh.ir/portfolio/ebcore/assets/img/1.png" alt="">
             </div>
             <div class="hero-number-back">01</div>
             <div class="hero-number">01</div>
@@ -605,7 +608,7 @@
         </li>
         <li>
             <div class="img-hero-background" style="position: relative; align-items: center">
-                <img src="http://130.185.73.58/~matomo/2.png" alt="">
+                <img src="https://bandezadeh.ir/portfolio/ebcore/assets/img/2.png" alt="">
             </div>
             <div class="hero-number-back">02</div>
             <div class="hero-number">02</div>
@@ -613,7 +616,7 @@
         </li>
         <li>
             <div class="img-hero-background" style="position: relative; align-items: center">
-                <img src="http://130.185.73.58/~matomo/3.png" alt="">
+                <img src="https://bandezadeh.ir/portfolio/ebcore/assets/img/3.png" alt="">
             </div>
             <div class="hero-number-back">03</div>
             <div class="hero-number">03</div>
@@ -621,7 +624,7 @@
         </li>
         <li>
             <div class="img-hero-background" style="position: relative; align-items: center">
-                <img src="http://130.185.73.58/~matomo/4.png" alt="">
+                <img src="https://bandezadeh.ir/portfolio/ebcore/assets/img/4.png" alt="">
             </div>
             <div class="hero-number-back">04</div>
             <div class="hero-number">04</div>
@@ -634,7 +637,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7 text-center">
-                <a href="#" class="hover-target">
+                <a href="https://bandezadeh.ir/portfolio/ebcore/docs/index.html" class="hover-target">
                     <div class="project-link-wrap">
                         <p>Documnents</p>
                     </div>
@@ -649,7 +652,7 @@
 <div class='cursor2' id="cursor2"></div>
 <div class='cursor3' id="cursor3"></div>
 
-<a href="https://ebcore.ir" class="link-to-portfolio hover-target" target=”_blank”></a>
+<a href="https://bandezadeh.ir/portfolio/ebcore/" class="link-to-portfolio hover-target" target=”_blank”></a>
 <script>
     (function ($) {
         "use strict";

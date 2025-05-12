@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 - Entity-based architecture
 - Modern router system
+- Ebcore ORM
 - Middleware support
 - Rate limiting
 - Cache system

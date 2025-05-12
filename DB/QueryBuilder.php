@@ -38,6 +38,18 @@ class QueryBuilder
         return $this;
     }
 
+    public function fetch(int $value)
+    {
+        $this->query .= " LIMIT $value";
+        return $this;
+    }
+
+    public function orderBy($field, $operator)
+    {
+        $this->query .= " ORDER BY $field $operator";
+        return $this;
+    }
+
     public function get()
     {
         $stmt = Model::getConnection()->prepare($this->query);

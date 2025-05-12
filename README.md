@@ -19,6 +19,7 @@ Ebcore is a modern and powerful PHP framework inspired by Entity-Based architect
 
 - 🏗️ Entity-Based Architecture
 - 🛣️ Modern Routing System
+- 🧩 object-relational mapper (ORM)
 - 🔒 Powerful Middleware System
 - ⚡ Advanced Caching
 - 🎯 Event System

@@ -508,7 +508,7 @@
 </head>
 <body>
 <div style="position: absolute; left: 0;top: 0; padding:3px; border-radius: 7px; background-color: black;color: #8ffd45; font-size: 10px; margin: 4px">
-    version 1.0.0 (lastest release)
+    version <?php echo file_get_contents("https://raw.githubusercontent.com/sajjadbandezadeh/ebcore-framework/refs/heads/master/version.txt"); ?> (lastest release)
 </div>
 <div style="z-index: 500;position: fixed; left: 0;bottom: 0; padding:4px; border-radius: 5px; background-color: black;color: white; font-size: 11.5px;">
     <?php

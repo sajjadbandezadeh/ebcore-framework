@@ -230,7 +230,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- [Documentation](https://ebcore.ir/docs)
+- [Documentation](https://bandezadeh.ir/portfolio/ebcore/docs/index.html)
 - [GitHub](https://github.com/sajjadbandezadeh/ebcore-framework)
 - [Twitter](https://twitter.com/ebcorefw)
 
